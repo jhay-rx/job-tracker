@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#new-application-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.stat {
+  background-color: #f0f0f0;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  width: 150px;
+  font-size: 12px;
+  margin: 5px;
+}
+
+#interviewed {
+  background-color: #1e90ff;
+}
+
+#rejected {
+  background-color: #ff6347;
+}
+
+#offered {
+  background-color: #32cd32;
+}
+
+@media screen and (max-width: 360px) {
+  /* Mobile-specific styles */
+  * {
+    font-size: small;
+  }
+}
