@@ -1,16 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Application Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- The header of the page -->
     <header>
-        <h1>Job Application Tracker</h1>
-        <p>Keep track of your job applications and their status.</p>
+      <h1>Job Application Tracker</h1>
+      <p>Keep track of your job applications and their status.</p>
     </header>
 
-</body>
+    <!-- Button to add a new application -->
+    <button id="new-application-btn" type="button">+ New Application</button>
+
+    <!-- Statistics section to show the count of applications in different statuses -->
+    <div id="stats">
+      <div class="stat" id="total-applications">Total Applications: 0</div>
+      <div class="stat" id="applied">Applied: 0</div>
+      <div class="stat" id="interviewed">Interviewed: 0</div>
+      <div class="stat" id="rejected">Rejected: 0</div>
+      <div class="stat" id="offered">Offered: 0</div>
+    </div>
+
+    <!-- Filter section to filter applications by their status -->
+    <div id="filter">
+      <label for="status-filter">Filter by status:</label>
+      <select id="status-filter">
+        <option value="all">All</option>
+        <option value="applied">Applied</option>
+        <option value="interviewed">Interviewed</option>
+        <option value="rejected">Rejected</option>
+        <option value="offered">Offered</option>
+      </select>
+    </div>
+
+    <!-- Container to display the list of job applications -->
+    <div id="applications"></div>
+
+    <!-- Modal for adding a new application -->
+    <div id="modal">
+      <div id="modal-content">
+        <h2>Add New Application</h2>
+        <form id="application-form">
+          <label for="company">Company:</label>
+          <input type="text" id="company" name="company" required />
+
+          <label for="position">Position:</label>
+          <input type="text" id="position" name="position" required />
+
+          <label for="status">Status:</label>
+          <select id="status" name="status" required>
+            <option value="applied">Applied</option>
+            <option value="interviewed">Interviewed</option>
+            <option value="rejected">Rejected</option>
+            <option value="offered">Offered</option>
+          </select>
+
+          <button type="submit">Add Application</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
