@@ -1,3 +1,4 @@
+# job-tracker
 JOB APPLICATION TRACKER PIPELINE
 Using only HTML, CSS, and Vanilla JavaScript
 Goal: Learn fundamentals (no major dependencies)
