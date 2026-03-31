@@ -12,7 +12,6 @@ Done:
    - In the root folder (job-tracker), create: index.html
    - In the css folder, create: style.css
    - In the js folder, create: app.js
-Todo:
 3. Build the HTML Structure (index.html)
    - Add basic HTML5 skeleton (<html>, <head>, <body>)
    - Create header with title and "+ New Application" button
