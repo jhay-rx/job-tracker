@@ -55,6 +55,11 @@ body {
   background-color: #32cd32;
 }
 
+#filter {
+  margin: 10px;
+  text-align: left;
+}
+
 @media screen and (max-width: 360px) {
   /* Mobile-specific styles */
   * {
