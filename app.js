@@ -15,3 +15,29 @@ document.addEventListener('DOMContentLoaded', ()=>{
         console.log(formData)    
     })
 })
+
+const modal = document.getElementById("modal");
+const newApplicationBtn = document.getElementById("new-application-btn"); 
+
+function openModal() {
+  modal.classList.add("show");
+}
+
+function closeModal() {
+  modal.classList.remove("show");
+}
+
+newApplicationBtn.addEventListener("click", openModal)
+
+/* close when clicking outside the modal box */
+modal.addEventListener("click", function (event){
+    if (event.target === modal) {
+        closeModal();
+    }
+})
+
+/* close when pressing esc */
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape")
+        closeModal;
+})
