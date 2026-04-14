@@ -12,57 +12,74 @@
       <h1>Job Application Tracker</h1>
       <p>Keep track of your job applications and their status.</p>
     </header>
+    <div class="main-container">
+      <!-- Button to add a new application -->
+      <button id="new-application-btn" type="button">+ New Application</button>
 
-    <!-- Button to add a new application -->
-    <button id="new-application-btn" type="button">+ New Application</button>
+      <!-- Statistics section to show the count of applications in different statuses -->
+      <div id="stats">
+        <div class="stat" id="total-applications">Total Applications: 0</div>
+        <div class="stat" id="applied">Applied: 0</div>
+        <div class="stat" id="interviewed">Interviewed: 0</div>
+        <div class="stat" id="rejected">Rejected: 0</div>
+        <div class="stat" id="offered">Offered: 0</div>
+      </div>
 
-    <!-- Statistics section to show the count of applications in different statuses -->
-    <div id="stats">
-      <div class="stat" id="total-applications">Total Applications: 0</div>
-      <div class="stat" id="applied">Applied: 0</div>
-      <div class="stat" id="interviewed">Interviewed: 0</div>
-      <div class="stat" id="rejected">Rejected: 0</div>
-      <div class="stat" id="offered">Offered: 0</div>
-    </div>
+      <hr />
 
-    <hr> 
+      <!-- Filter section to filter applications by their status -->
+      <div id="filter">
+        <label for="status-filter">Filter by status:</label>
+        <select id="status-filter">
+          <option value="all">All</option>
+          <option value="applied">Applied</option>
+          <option value="interviewed">Interviewed</option>
+          <option value="rejected">Rejected</option>
+          <option value="offered">Offered</option>
+        </select>
+      </div>
 
-    <!-- Filter section to filter applications by their status -->
-    <div id="filter">
-      <label for="status-filter">Filter by status:</label>
-      <select id="status-filter">
-        <option value="all">All</option>
-        <option value="applied">Applied</option>
-        <option value="interviewed">Interviewed</option>
-        <option value="rejected">Rejected</option>
-        <option value="offered">Offered</option>
-      </select>
-    </div>
+      <!-- Container to display the list of job applications -->
+      <div id="applications-table">
+        <div class="table-header">
+          <div class="table-row">
+            <div class="job-attributes">Company</div>
+            <div class="job-attributes">Position</div>
+            <div class="job-attributes">Status</div>
+          </div>
+        </div>
 
-    <!-- Container to display the list of job applications -->
-    <div id="applications"></div>
+        <div class="table-body">
+          <div class="table-row">
+            <div class="job-attributes">Google</div>
+            <div class="job-attributes">Software Engineer</div>
+            <div class="job-attributes">Applied</div>
+          </div>
+        </div>
+      </div>
 
-    <!-- Modal for adding a new application -->
-    <div id="modal">
-      <div id="modal-content">
-        <h2>Add New Application</h2>
-        <form id="application-form">
-          <label for="company">Company:</label>
-          <input type="text" id="company" name="company" required />
+      <!-- Modal for adding a new application -->
+      <div id="modal">
+        <div id="modal-content">
+          <h2>Add New Application</h2>
+          <form id="application-form">
+            <label for="company">Company:</label>
+            <input type="text" id="company" name="company" required />
 
-          <label for="position">Position:</label>
-          <input type="text" id="position" name="position" required />
+            <label for="position">Position:</label>
+            <input type="text" id="position" name="position" required />
 
-          <label for="status">Status:</label>
-          <select id="status" name="status" required>
-            <option value="applied">Applied</option>
-            <option value="interviewed">Interviewed</option>
-            <option value="rejected">Rejected</option>
-            <option value="offered">Offered</option>
-          </select>
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+              <option value="applied">Applied</option>
+              <option value="interviewed">Interviewed</option>
+              <option value="rejected">Rejected</option>
+              <option value="offered">Offered</option>
+            </select>
 
-          <button type="submit">Add Application</button>
-        </form>
+            <button type="submit">Add Application</button>
+          </form>
+        </div>
       </div>
     </div>
 

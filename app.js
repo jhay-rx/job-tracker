@@ -6,23 +6,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // when submit button is clicked/pressed
   form.addEventListener("submit", (event) => {
     event.preventDefault();
+    closeModal();
 
-    //store data from the form to a FormData obj
+    //STORE data from the form to a FormData obj
     const formData = new FormData(form);
+
+    for (let [name, value] of formData) {
+      localStorage.setItem(name, value);
+    }
 
     // this display the content of formData to the console
     console.log(Object.fromEntries(formData));
-
-    const newApplication = document.createElement("p");
-    const companyName = document.createTextNode(formData.get("company"));
-    const positionName = document.createTextNode(formData.get("position"));
-    const applicationStatus = document.createTextNode(formData.get("status"));
-    newApplication.appendChild(companyName);
-    newApplication.appendChild(positionName);
-    newApplication.appendChild(applicationStatus);
-
-    const applications = document.getElementById("applications");
-    applications.appendChild(newApplication);
   });
 });
 

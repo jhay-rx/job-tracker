@@ -1,10 +1,12 @@
 * {
   box-sizing: border-box;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 header {
-  background-color: #eebd8f;
-  color: black;
+  background-color: #2563eb;
+  color: white;
   padding: 10px;
   text-align: center;
 }
@@ -13,6 +15,12 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 #new-application-btn {
@@ -46,14 +54,17 @@ body {
 
 #interviewed {
   background-color: #1e90ff;
+  color: white;
 }
 
 #rejected {
   background-color: #ff6347;
+  color: white;
 }
 
 #offered {
   background-color: #32cd32;
+  color: white;
 }
 
 #filter {
@@ -68,7 +79,7 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 /* display modal */
@@ -86,7 +97,8 @@ body {
   position: relative;
 }
 
-input[type=text], #status {
+input[type="text"],
+#status {
   width: 100%;
   padding: 12px;
   margin: 8px 0;
@@ -96,9 +108,9 @@ input[type=text], #status {
   box-sizing: border-box;
 }
 
-input[type=submit] {
+input[type="submit"] {
   width: 100%;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 14px;
   margin: 8px 0;
@@ -106,10 +118,98 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
 }
+/* Main container - Responsive width */
+#applications-table {
+  width: 100%; /* Takes full available width */
+  max-width: 1200px; /* Prevents it from becoming too wide on large screens */
+  margin: 20px auto; /* Centers the table */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  background-color: white;
+}
 
-@media screen and (max-width: 360px) {
-  /* Mobile-specific styles */
-  * {
-    font-size: small;
+/* Header Styling */
+.table-header {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+}
+
+.table-row {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap; /* Allows wrapping on very small screens */
+}
+
+/* Make header corners rounded */
+.table-header .table-row {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  overflow: hidden;
+}
+
+/* Each column cell */
+.job-attributes {
+  padding: 16px 12px;
+  flex: 1; /* Equal width by default */
+  min-width: 0; /* Prevents overflow issues */
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* Make first and last header cells rounded */
+.table-header .table-row .job-attributes:first-child {
+  border-top-left-radius: 12px;
+}
+
+.table-header .table-row .job-attributes:last-child {
+  border-top-right-radius: 12px;
+}
+
+/* Body rows */
+.table-body .table-row {
+  display: flex;
+  border-bottom: 1px solid #e5e7eb;
+  flex-wrap: wrap;
+}
+
+.table-body .table-row:last-child {
+  border-bottom: none;
+}
+
+.table-body .job-attributes {
+  padding: 14px 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ===================== RESPONSIVE BEHAVIOR ===================== */
+
+/* On medium screens (tablets) - slightly smaller padding */
+@media (max-width: 768px) {
+  .job-attributes {
+    padding: 14px 10px;
+    font-size: 0.95rem;
   }
 }
+
+/* On small screens (mobile) - stack the columns vertically */
+@media (max-width: 640px) {
+  .job-attributes {
+    width: 100%; /* Full width when stacked */
+    border-bottom: 1px solid #f3f4f6;
+  }
+
+  /* Remove border from last item in row */
+  .table-row .job-attributes:last-child {
+    border-bottom: none;
+  }
+
+  /* Keep header looking good even when stacked */
+  .table-header .table-row {
+    border-radius: 12px 12px 0 0;
+  }
+}
+
+
